@@ -425,11 +425,13 @@ Android_JNI_CreateKey_once(void)
 }
 
 /* Library init */
+/*
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved)
 {
     mJavaVM = vm;
     return JNI_VERSION_1_4;
 }
+*/
 
 void checkJNIReady(void)
 {
@@ -1143,7 +1145,7 @@ JNIEXPORT void JNICALL SDL_JAVA_INTERFACE(nativeFocusChanged)(
     if (Android_Window) {
         __android_log_print(ANDROID_LOG_VERBOSE, "SDL", "nativeFocusChanged()");
         SDL_SendWindowEvent(Android_Window, (hasFocus ? SDL_WINDOWEVENT_FOCUS_GAINED : SDL_WINDOWEVENT_FOCUS_LOST), 0, 0);
-    } 
+    }
 
     SDL_UnlockMutex(Android_ActivityMutex);
 }
