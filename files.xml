@@ -121,6 +121,8 @@
         <compilerflag value="-D__IPHONEOS__" if="ios || tvos" />
         <compilerflag value="-D__TVOS__" if="tvos" />
 
+        <compilerflag value="-DSDL_ASSERT_LEVEL=1" unless="debug" />
+
         <section if="windows">
 
             <compilerflag value="-DUSING_GENERATED_CONFIG_H" />
